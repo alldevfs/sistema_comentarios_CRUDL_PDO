@@ -1,0 +1,193 @@
+* {
+	padding: 0px;
+	margin:0px;
+}
+
+body {
+	font-family: arial;
+	background-color: rgba(63, 63, 191, 0.2);
+}
+h2 {
+	font-size: 40px;
+	padding: 65px 10px;
+}
+
+/*__________________MENU__________________*/
+
+nav {
+	background-color: rgba(60, 161, 191);
+	height: 60px;
+}
+
+ul {
+	list-style: none;
+	float: right;
+	margin-right: 80px;
+}
+
+li {
+	display: inline-block;
+	line-height: 60px;
+	padding: 0px 10px;
+	font-family: sans-serif;
+	font-size: 19px;
+}
+li a {
+	text-decoration: none;
+	color: white;
+	transition:  0.2s ease-out;
+}
+li a:hover {
+	border-bottom: 1px solid white;
+	padding-bottom: 5px;
+	transition:  0.2s ease-out;
+}
+
+/*__________________CONTEUDO-PAGINA__________________*/
+
+div.conteudo-pagina {
+	width: 85%;
+	/*background-color: cyan;*/
+	margin: auto;
+}
+
+/*__________________CONTEUDO-POSTAGEM__________________*/
+
+section#conteudo1 {
+	width: 60%;
+/*	background-color: green;
+*/	box-sizing: border-box;
+float: left;
+}
+img {
+	width: 100%;
+}
+h1 {
+	padding: 70px 0px 20px 0px;
+	font-size: 27pt;
+	line-height: 34px;
+}
+p.texto {
+	font-size: 14pt;
+	color: rgba(0,0,0, .8);
+	line-height: 40px;
+	margin: 20px 0px;
+	font-family: 'Microsoft YaHei Light';
+}
+
+/*__________________CONTEUDO-FORMULARIO__________________*/
+
+h3 {
+	font-family: 'Microsoft YaHei Light';
+	line-height: 80px;
+	margin-bottom:10px;
+}
+form img {
+	width: 50px;
+	display: block;
+	float: left;
+	padding: 10px;
+}
+
+form textarea {
+	height:100px;
+	width: 85%;
+	border: none;
+	padding: 7px;
+	font-size: 14pt;
+	margin: 9px;
+	font-family: arial;
+	outline: none;
+	display: block;
+	float: left;
+}
+form input#enviar-comentario{
+	margin: 7px;
+	font-family: 'Arial Black';
+	width: 220px;
+	height:52px;
+	background-color: white;
+	color: rgba(63, 104, 191, 0.8);
+	border: 2px solid rgba(63, 104, 191, 0.8);
+	transition:  0.2s ease-out;
+	cursor: pointer;
+	
+	float: right;
+}
+form input#enviar-comentario:hover {
+	background-color: rgba(63, 104, 191, 0.8);
+	color: white;
+	border: 2px solid white;
+	transition:  0.2s ease-out;
+}
+
+/*__________________CONTEUDO-COMENTARIOS__________________*/
+
+.outros-comentarios {
+	box-sizing: border-box;
+	border-bottom: 1px solid rgba(63, 104, 191, 0.8);
+	clear: both;
+	padding: 10px;
+	display: block;
+}
+.outros-comentarios img {
+	width: 50px;
+	float: left;
+	padding-right: 10px;
+}
+.outros-comentarios h3 {
+	float: left;
+	color: rgba(63, 104, 191, 0.8);
+	font-size: 12pt;
+	padding: 5px 10px 5px 0px;
+	line-height: 40%;
+	
+}
+.outros-comentarios h4 {
+	font-size:10pt;
+	color: rgba(0, 0, 0, .6);
+	line-height: 17px;
+}
+.outros-comentarios h4 a {
+	color: black;
+}
+.outros-comentarios p{
+	line-height: 25px;
+	padding: 15px 
+}
+
+/*__________________CONTEUDO-LATERAL__________________*/
+
+section#conteudo2, section#conteudo3 {
+	width: 40%;
+	box-sizing: border-box;
+	/*background-color: red;*/
+	float: left;
+	
+}
+section#conteudo2 div, section#conteudo3 div {
+	width:70%;
+	background-color: rgba(0, 0, 0, .1);
+	border: 1px solid rgba(0, 0, 0, .1);
+	padding: 60px, 20px;
+	margin: 50px auto 0px auto;
+}
+section#conteudo2 img {
+	width: 75%;
+	margin: auto;
+	display: block;
+}
+
+section#conteudo2 p , section#conteudo3 p {
+	width: 75%;
+	font-family: 'Microsoft YaHei Light';
+	color: rgba(0, 0, 0, .8);
+	text-align: justify;
+	line-height: 20pt;
+	margin: 20px auto;
+}
+section#conteudo3 h4 {
+	font-family: 'Microsoft YaHei Light';
+	font-size: 16pt;
+	text-align: center;
+}

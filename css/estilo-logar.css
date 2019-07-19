@@ -1,0 +1,118 @@
+	@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
+	body {
+		font: normal 14pt Arial;
+		margin-top:7%;		
+		background-image: url(../img/fundo.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+	}
+	header {
+		font-family: Arial;
+		text-align: center;
+		color: white;
+	}
+	section {
+		background: white;
+		border-radius: 11px;
+		padding: 12px;
+		width: 400px;
+		height: 335px;
+		margin: auto;
+		box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.400);
+		transition-duration: 0.4s;
+
+	}
+	section:hover {
+		box-shadow: 4px 4px 11px rgba(0, 0, 0, 4);
+		transition-duration: 0.4s;
+	}
+	div {
+		text-align: center;
+		padding: 3px;
+	}
+	div h3, header h2 {
+		font-family: 'Patua One', cursive;
+		font-weight: normal;
+		font-size: 25px;
+	}
+	input.campos {
+		margin-left: 10px;
+		width: 75%;
+		height:32px;
+		border-radius: 5px;
+		border-style: none;
+		border-bottom: 2px solid black;
+		font-family: 'Patua One', cursive;
+		font-size: 15px;
+		outline: none;
+		transition-duration: 0.4s;
+	}
+	input.campos:hover {
+
+		transition-duration: 0.4s;
+		background-color: rgba(0, 0, 0, 0.2);
+		border-bottom: 2px solid purple;
+	}
+	input.btn-logar {
+		width: 115px;
+		height: 40px;
+		background-color: rgba(0, 0, 0, 0.01); 
+		border-color: purple;
+		color: purple;
+		font-family: 'Patua One', cursive;
+		border-radius: 5px;
+		transition-duration: 0.4s;
+		cursor: pointer;
+	}
+	input.btn-logar:hover {
+		background-color: purple; 
+		border: none;
+		color: white;
+		transition-duration: 0.4s;	
+	}
+	div a {
+		padding: 10px;
+		float: right;
+		display: block;
+		font-family: 'Patua One', cursive;
+		color: purple;
+		font-size: 14px;
+		text-decoration: none;
+		transition-duration: 0.4s;
+	}
+	div a:hover {
+		font-size: 16px;
+		color: purple;
+		font-family: "Lucida Sans Unicode";
+		transition-duration: 0.4s;
+	}
+	footer {
+		color: white;
+		text-align: center;
+		font-style: italic;
+		font-size: 17px;
+	}
+
+	.fadeIn {
+		-webkit-animation: fadeIn 0.8s ease-in-out;
+		-moz-animation: fadeIn 0.8s ease-in-out;
+		-o-animation: fadeIn 0.8s ease-in-out;
+		animation: fadeIn 0.8s ease-in-out;
+	}
+	@-webkit-keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; } 
+	}
+	@-moz-keyframes fadeIn {
+		0% { opacity: 0;}
+		100% { opacity: 1; }
+	}
+	@-o-keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		100% { opacity: 1; }
+	}
