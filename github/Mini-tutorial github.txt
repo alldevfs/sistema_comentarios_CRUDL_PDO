@@ -1,0 +1,27 @@
+--------------------------------------Do Zero--------------------------------------
+ - git init
+Para iniciar o repositório e permiti-lo executar os comandos do gitthub.
+ - git remote add origin <url_do_repositorio.git>
+Para parear com o repositório que deseja mexer.
+ - git branch -b '<nome_branch>'
+Para criar uma nova branch e depois alternar para ela.
+ - git add .
+Para adicionar todos os arquivos na lista de envio para o repositorio no github page.
+ - git commit -m '<mensagem_de_commit>'
+Para commitar suas alterações nos arquivos e enviar uma mensagem que caracterize essas mudanças.
+ - git push origin '<nome_branch_atual>'
+Para finalmente poder enviar os arquivos para o gihtub page.
+--------------------------------------Caso sejam apenas atualizações--------------------------------------
+ - git pull origin '<Nome_branch>'
+Para atualizar o seu repositório local com a branch utilizada.
+ - git branch e git checkout '<nome_da_branch>'
+Para verificar as branchs existentes e depois para alternar de branch.
+ - git status
+Para verificar as alterações realizadas.
+ - git add .
+Para adicionar todos os arquivos na lista de envio para o repositorio no github page.
+ - git commit -m '<mensagem_de_commit>'
+Para commitar suas alterações nos arquivos e enviar uma mensagem que caracterize essas mudanças.
+ - git push origin '<nome_branch_atual>'
+Para finalmente poder enviar os arquivos para o gihtub page.
+--------------------------------------Caso sejam apenas atualizações--------------------------------------
