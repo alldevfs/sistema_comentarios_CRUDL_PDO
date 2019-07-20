@@ -4,12 +4,14 @@ require_once 'Global.php';
 
 <?php 
 try {
+	// $id = 1;
 	$usuarios = new Usuario();
-	$usuarios->nome = "Allan";
-	$usuarios->email = "allkes@outlook.com";
-	$usuarios->senha = "1234";
+	// $usuarios->nome = "Allan";
+	// $usuarios->email = "allkes@outlook.com";
+	// $usuarios->senha = "1234";
 	// $usuarios->inserirUsuario();
-	// $usuarios->excluirUsuario();
+
+	$usuarios->excluirUsuario();
 	$lista = $usuarios->listarUsuario();
 } catch (Exception $e) {
 	Erro::tratarErro($e);
