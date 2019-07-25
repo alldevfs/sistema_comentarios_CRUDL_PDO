@@ -4,14 +4,15 @@ require_once 'Global.php';
 
 <?php 
 try {
-	// $id = 1;
+	//Crie um GET para receber o valor id que será escluido. Apenas testes!
 	$usuarios = new Usuario();
-	// $usuarios->nome = "Allan";
-	// $usuarios->email = "allkes@outlook.com";
-	// $usuarios->senha = "1234";
-	// $usuarios->inserirUsuario();
-
-	$usuarios->excluirUsuario();
+	//$usuarios->id = $_GET['id'];
+	$usuarios->nome = "Allan";
+	$usuarios->email = "allkes@outlook.com";
+	$usuarios->senha = "1234";
+	//$usuarios->inserirUsuario();
+	//para zerar o AUTO_INCREMENT do id do banco use "ALTER TABLE usuarios AUTO_INCREMENT = 1";
+	//$usuarios->excluirUsuario();
 	$lista = $usuarios->listarUsuario();
 } catch (Exception $e) {
 	Erro::tratarErro($e);

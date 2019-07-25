@@ -13,20 +13,20 @@
 	<section>
 		<div><h3>Tela de login</h3></div>	
 		<div>
-			<form method="POST" action="#">
-				<input type="text" name="login" placeholder="Seu e-mail . . . " required class="campos"><br><br><br><br>
+			<form method="POST">
+				<input type="text" name="email" placeholder="Seu e-mail . . . " required class="campos" autocomplete="off"><br><br><br><br>
 				<input type="password" name="senha" required class="campos">
 				<br><br>
 				<input type="submit" value="Entrar" class="btn-logar">
 			</form>
 			<div id="links">
-				<a href="#tela-cadastro.php">Registre-se</a>
+				<a href="cadastrar.php">Registre-se</a>
 			</div>
 		</div>
 	</section>
 	<footer>
 		<p>&copy; Allan Victor</p>
 	</footer>
-	<script type="text/javascript" src="js/Sistema-hora-do-dia.js"></script>
 </body>
 </html>
+<?php require_once 'verificaLogin.php' ?>

@@ -4,6 +4,6 @@ define('DEBUG', true);
 
 define('DB_DRIVE', 'mysql');
 define('DB_HOSTNAME', 'localhost');
-define('DB_DATABASE', 'sistema_comentarios_db');
+define('DB_DATABASE', 'projeto_login');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
