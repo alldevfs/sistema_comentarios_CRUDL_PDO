@@ -15,15 +15,15 @@
 			<h3>Preencha os campos abaixo</h3>
 		</div>	
 		<div class="box-limit">
-			<form method="POST" action="#efetuar-cadastro.php">
+			<form method="POST">
 				<label>Nome:* </label>
-				<input type="text" name="nome" placeholder="Primeiro e segundo nome.." required class="campos"><br>
+				<input type="text" name="nome" placeholder="Primeiro e segundo nome.." required class="campos" maxlength="45"><br>
 				<label>E-mail: </label>
-				<input type="text" name="login" placeholder="Seu e-mail de acesso.." required class="campos"><br>
+				<input type="text" name="email" placeholder="Seu e-mail de acesso.." required class="campos" maxlength="45"><br>
 				<label>Senha:</label>
-				<input type="password" name="senha" required class="campos"><br>
+				<input type="password" name="senha" required class="campos" maxlength="45"><br>
 				<label>Confirme a senha:* </label>
-				<input type="password" name="senha-conf" required class="campo-conf"><br>
+				<input type="password" name="senhaConf" required class="campo-conf" maxlength="45"><br>
 				<br>
 				<center><input type="submit" value="Cadastrar" class="btn-logar"></center>
 			</form>
@@ -32,6 +32,12 @@
 	<footer>
 		<p>&copy; Allan Victor</p>
 	</footer>
-	<script type="text/javascript" src="js/Sistema-hora-do-dia.js"></script>
 </body>
 </html>
+<!-- 
+// Verificar o uso do botão cadastrar;
+// Guardar os dados nas variáveis;
+// Enviar os dados;
+// Verificar o tipo de retorno, caso sucesso ou caso de falha com o true e false; 
+-->
+<?php require_once 'VerificaCadastro.php'; ?>

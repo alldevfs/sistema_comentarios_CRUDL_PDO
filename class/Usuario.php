@@ -1,71 +1,85 @@
 <?php 
 
-
 class Usuario {
-	public $nome;
-	public $email;
-	public $senha;
 
-	function __construct($id = false) {
-		if ($id) {
-			$this->id = $id;
-			$this->consultarUsuario();
+	private $PDO;
+
+	function __construct() {
+		try {
+
+			$this->PDO = Conexao::pegarConexao();
+
+		} catch(PDOException $e){
+
+			echo "Erro com o Banco: " . $e->getMessage();
+
+		} catch(Exception $e) {
+
+			echo "Erro genérico: " . $e->getMessage();
 		}
+		
 	}
+	/*Criar um UsuarioDAO para encurtar mais ainda e simplificar o codigo. No mesmo estilo da classe Conexao! */
 
-	//CRUDL
-	
-	public function inserirUsuario() {
-		$query = "INSERT INTO usuarios(nome, email, senha) VALUES('" . $this->nome . "', '" . $this->email . "', '" . $this->senha . "')";
-		$conexao = Conexao::pegarConexao();
-		$conexao->exec($query);
-	}
+	//Cadastrar
 
-	public function consultarUsuario() {
-		$query = "SELECT id, nome, email, senha FROM usuarios WHERE id = " . $this->id;
-		$conexao = Conexao::pegarConexao();
-		$resultado = $conexao->query($query);
-		$lista = $resultado->fetchAll();
-		foreach ($lista as $linha) {
-			$this->id = $linha['id'];
-			$this->nome = $linha['nome'];
-			$this->email = $linha['email'];
-			$this->senha = $linha['senha'];
+	public function cadastrarUsuario($nome, $email, $senha)	{
+		$sqlVerifica = "SELECT id FROM usuarios WHERE email = :e";
+		$sqlCadastro = "INSERT INTO usuarios(nome, email, senha) VALUES(:n, :e, :s)";
+		$stmt = $this->PDO->prepare($sqlVerifica);
+		$stmt->bindValue(":e", $email);
+		$stmt->execute();
+
+		if ($stmt->rowCount() > 0) { // Se tiver retorno significa que já existe este email.
+			return false;
+		} else {					 // Não houve retorno então prossegue com o cadastro.
+			$stmt = $this->PDO->prepare($sqlCadastro);
+			$stmt->bindValue(":n", $nome);
+			$stmt->bindValue(":e", $email);
+			$stmt->bindValue(":s", md5($senha));
+			$stmt->execute();
+			return true;
 		}
+
 	}
 
-	public function atualizarUsuario() {
-		$query = "UPDATE usuarios SET nome = " . $this->nome . ", email = " . $this->email ." senha = " . $this->senha . " WHERE id = " . $this->id;
-		$conexao = Conexao::pegarConexao();
-		$conexao->exec($query); 
-	}
+	//Logar
 
-	public function excluirUsuario() {
-		$query = "DELETE FROM usuarios WHERE id = " . $this->id;
-		$conexao = Conexao::pegarConexao();
-		$conexao->exec($query);
-	}
+	public function logarUsuario($email, $senha)	{
+		$sqlBusca = "SELECT * FROM usuarios WHERE email = :e AND senha = :s";
+		$stmt = $this->PDO->prepare($sqlBusca);
+		$stmt->bindValue(":e", $email);
+		$stmt->bindValue(":s", md5($senha));
+		$stmt->execute();
 
-	public function listarUsuario() {
-		$query = "SELECT id, nome, email, senha FROM usuarios";
-		$conexao = Conexao::pegarConexao();
-		$resultado = $conexao->query($query);
-		$lista = $resultado->fetchAll();
-		return $lista;
-	}
-
-	public function logarUsuario() {
-		$query = "SELECT * FROM usuarios WHERE name = " . $this->name . " AND senha = " . $this->senha;
-		$conexao = Conexao::pegarConexao();
-		$resultado = $conexao->query($query);
-		$login = $resultado->fetchAll();
-		if ($login > 0) {
-		 	//SUCESSO
+		if ($stmt->rowCount() > 0) {		//Caso a pessoa exista.
+			$session = $stmt->fetch();
 			session_start();
-			$_SESSION['valida'] = true;
-
-		} else {
-			$_SESSION['valida'] = false;
+			//Aqui vai a regra de negócio de nivel de acesso. 
+			echo "<script> alert('Caso existe'); </script>";
+			if ($session['nivel'] == true) { // ou 1 no BD
+				//É ADM
+				$_SESSION['master'] = $session['nivel'];
+				$_SESSION['id'] = $session['id'];
+			} else {
+				//Não é ADM
+				$_SESSION['id'] = $session['id'];
+			}
+			return true;
+		} else{
+			return false;
 		}
+
+
+	}
+
+	public function buscarUsuario($id) {
+		$sqlBuscaUsuario = "SELECT * FROM usuarios WHERE id = :i";
+		$stmt = $this->PDO->prepare($sqlBuscaUsuario);
+		$stmt->bindValue(":i", $id);
+		$stmt->execute();
+
+		$dadosUsuario = $stmt->fetch();
+		return $dadosUsuario;
 	}
 }

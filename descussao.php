@@ -11,7 +11,7 @@
 		<h3>Conte-nos o que achou..</h3>
 		<form method="POST" action="#">
 			<img src="img/img-perfil.jpg">
-			<textarea name="texto" placeholder="Deixe seu comentário que ele é sim importânte!"></textarea>
+			<textarea name="texto" placeholder="Deixe seu comentário que ele é sim importânte!" maxlength="400"></textarea>
 			<input type="submit" value="Publicar seu comentário" id="enviar-comentario">
 		</form>
 		<div class="outros-comentarios">
