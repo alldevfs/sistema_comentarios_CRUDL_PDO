@@ -1,3 +1,4 @@
+<?php require_once 'buscaUsuario.php'; ?>
 <?php require_once 'header.php' ?>
 <div class="conteudo-pagina">
 	<section id="conteudo1">
