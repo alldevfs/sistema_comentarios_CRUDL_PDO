@@ -82,4 +82,13 @@ class Usuario {
 		$dadosUsuario = $stmt->fetch();
 		return $dadosUsuario;
 	}
+
+	public function listarUsuario()	{
+		$sqlLista = "SELECT * FROM usuarios";
+		$stmt = $this->PDO->prepare($sqlLista);
+		$stmt->execute();
+
+		$lista = $stmt->fetchAll();
+		return $lista;
+	}
 }

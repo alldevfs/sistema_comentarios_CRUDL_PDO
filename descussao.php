@@ -1,4 +1,5 @@
 <?php require_once 'buscaUsuario.php'; ?>
+<?php require_once 'exibeComentarios.php' ?>
 <?php require_once 'header.php' ?>
 <div class="conteudo-pagina">
 	<section id="conteudo1">
@@ -15,52 +16,37 @@
 			<textarea name="texto" placeholder="Deixe seu comentário que ele é sim importânte!" maxlength="400"></textarea>
 			<input type="submit" value="Publicar seu comentário" id="enviar-comentario">
 		</form>
-		<div class="outros-comentarios">
-			<img src="img/img-perfil.jpg">
-			<h3>Nome do coleguinha 1</h3>
-			<h4>horário e data <a href="#">excluir</a></h4>
-			<p> comentário da pessoa.</p>
-		</div>
-		<div class="outros-comentarios">
-			<img src="img/img-perfil.jpg">
-			<h3>Nome do coleguinha 2</h3>
-			<h4>horário e data <a href="#">excluir</a></h4>
-			<p> comentário da pessoa.</p>
-		</div>
-		<div class="outros-comentarios">
-			<img src="img/img-perfil.jpg">
-			<h3>Nome do coleguinha 3</h3>
-			<h4>horário e data <a href="#">excluir</a></h4>
-			<p> comentário da pessoa.</p>
-		</div>
-		<div class="outros-comentarios">
-			<img src="img/img-perfil.jpg">
-			<h3>Nome do coleguinha 4</h3>
-			<h4>horário e data <a href="#">excluir</a></h4>
-			<p> comentário da pessoa.</p>
-		</div>
-		<div class="outros-comentarios">
-			<img src="img/img-perfil.jpg">
-			<h3>Nome do coleguinha 5</h3>
-			<h4>horário e data <a href="#">excluir</a></h4>
-			<p> comentário da pessoa.</p>
-		</div>
-	</section>
+		<?php if (count($dadoComentarios) > 0) 
+		{			
+			foreach ($dadoComentarios as $dc) 
+				{ ?>
+					<?php $data = new DateTime($dc['dia']);  ?>
+					<div class="outros-comentarios">
+						<img src="img/img-perfil.jpg">
+						<h3><?= $dc['nome_usuario']; ?></h3>
+						<h4><?= $dc['horario']; ?> - <?= $data->Format('d/m/Y'); ?> <a href="#">excluir</a></h4>
+						<p><?= $dc['comentario']; ?></p>
+					</div>
+				<?php } 
+			} else { ?>
+				<center><h1>Ainda não existem comentários nesta postagem.</h1></center>
+			<?php } ?>
+		</section>
 
-	<section id="conteudo2">
-		<div>
-			<img src="img/prototipagem.png">
-			<p>É até engraçado quando pensamos a respeito do layout do nosso site. Geralmente usamos templates prontos e em casos raros criamos um do zero.</p>
-		</div>
-	</section>
+		<section id="conteudo2">
+			<div>
+				<img src="img/prototipagem.png">
+				<p>É até engraçado quando pensamos a respeito do layout do nosso site. Geralmente usamos templates prontos e em casos raros criamos um do zero.</p>
+			</div>
+		</section>
 
-	<section id="conteudo3">
-		<div>
-			<h4>Pensando sobre o site</h4>
-			<p>A medida que ele é pensado, desenhado, prototipado, e feito testes de direcionamento de contepudo, tudo fica muito mais legal!</p>
-		</div>
-	</section>
-	
-</div>
+		<section id="conteudo3">
+			<div>
+				<h4>Pensando sobre o site</h4>
+				<p>A medida que ele é pensado, desenhado, prototipado, e feito testes de direcionamento de contepudo, tudo fica muito mais legal!</p>
+			</div>
+		</section>
+
+	</div>
 </body>
 </html>
