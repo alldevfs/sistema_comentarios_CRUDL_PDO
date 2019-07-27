@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 * {
 	padding: 0px;
 	margin:0px;
@@ -12,7 +13,14 @@ h2 {
 	padding: 65px 10px;
 }
 
-/*__________________MENU__________________*/
+/*__________________saudação__________________*/
+
+h2#saudacao {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 35pt;
+	padding: 50px;
+	font-weight: normal;
+}
 
 ul {
 	list-style: none;

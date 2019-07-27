@@ -15,18 +15,25 @@ if (isset($_POST['nome'])) { //Ver uma forma melhor de verificar o input de cada
 			require_once 'class/Usuario.php';
 			$usuario = new Usuario();
 			
-			if ($usuario->cadastrarUsuario($nome, $email, $senha)) {
-				echo "<script> alert('Cadastrado com sucesso!'); </script>";
-				header('Location: entrar.php');
-			} else {
-				echo "<script> alert('Email já cadastrado!'); </script>";
-			}
+			if ($usuario->cadastrarUsuario($nome, $email, $senha)) { ?>
 
-		} else {
-			echo "<script> alert('As senhas não coincidem!'); </script>";			//ERRO 2
-		}
+				<p class="mensagem">Cadastrado com sucesso! <a href="entrar.php">Deseja logar?</a></p>
+				
+			<?php } else { ?>
 
-	} else {																		//ERRO 1
-		echo "<script> alert('É obrigatório preencher todos os campos!'); </script>";
-	}
+				<p class="mensagem">Email já cadastrado!</p>
+			<?php }
+
+		} else { ?>
+
+			<p class="mensagem">As senhas não coincidem!</p>      						<!-- //ERRO 2 -->
+
+		<?php }
+
+	} else { ?>	
+
+		<p class="mensagem">É obrigatório preencher todos os campos!</p>  				<!-- //ERRO 1 -->
+
+	<?php 	}
 }
+?>
