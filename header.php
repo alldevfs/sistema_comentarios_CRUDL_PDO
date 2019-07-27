@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head lang="pt-br">
-	<meta charset="utf-8">
+	<meta http-equiv=”Content-Type” content=”text/html; charset=iso-8859-1″>
 	<!-- ... -->
 	<title>Sistema de Comentário</title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
