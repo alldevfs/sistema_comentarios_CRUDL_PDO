@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/estilo-cadastrar.css">
 </head>
 <body class="fadeIn">
+	<?php require_once 'VerificaCadastro.php'; ?>
 	<header>
 		<h2>Tela de cadastro</h2>
 	</header>
@@ -25,8 +26,9 @@
 				<label>Confirme a senha:* </label>
 				<input type="password" name="senhaConf" required class="campo-conf" maxlength="45"><br>
 				<br>
-				<center><input type="submit" value="Cadastrar" class="btn-logar"></center>
+				<center><input type="submit" value="Cadastrar" class="btn-logar"></center> 
 			</form>
+
 		</div>
 	</section>
 	<footer>
@@ -40,4 +42,5 @@
 // Enviar os dados;
 // Verificar o tipo de retorno, caso sucesso ou caso de falha com o true e false; 
 -->
-<?php require_once 'VerificaCadastro.php'; ?>
+
+<!-- require_once 'Modals.php'; -->

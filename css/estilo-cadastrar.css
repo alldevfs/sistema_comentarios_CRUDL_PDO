@@ -1,8 +1,22 @@
 	@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
 
+	/*__________________Alertas__________________*/
+
+	.mensagem {
+		text-align: center;
+		background-color: rgba(136, 16, 174, .2);
+		border: 1px solid rgba(136, 16, 174, .7);
+		width: 400px;
+		margin: 0px auto;
+		padding: 15px;
+		border-radius: 7px;
+		transition-duration: 0.4s;
+	}
+
+
 	body {
 		font: normal 14pt Arial;
-		margin-top:7%;		
+		margin-top:3%;		
 		background-image: url(../img/fundo.png);
 		background-repeat: no-repeat;
 		background-size: 100%;
@@ -18,7 +32,7 @@
 		padding: 12px;
 		width: 400px;
 		height: 370px;
-		margin: auto;
+		margin: 0px auto;
 		box-shadow: 4px 4px 11px rgba(0, 0, 0, 0.400);
 		transition-duration: 0.4s;
 

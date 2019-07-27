@@ -1,4 +1,5 @@
 <?php require_once 'buscaUsuario.php'; ?>
+<?php require_once 'Validacao.php'; ?>
 <?php include 'header.php' ?>
 <table id="tabela_dados">
 	<tr id="tabela_titulo">
