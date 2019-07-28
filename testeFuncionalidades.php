@@ -1,19 +1,18 @@
 <?php 
 require_once 'Global.php';
-?>
 
-<?php 
 try {
-	//Crie um GET para receber o valor id que será escluido. Apenas testes!
-	$usuarios = new Usuario();
-	//$usuarios->id = $_GET['id'];
-	$usuarios->nome = "Allan";
-	$usuarios->email = "allkes@outlook.com";
-	$usuarios->senha = "1234";
-	//$usuarios->inserirUsuario();
-	//para zerar o AUTO_INCREMENT do id do banco use "ALTER TABLE usuarios AUTO_INCREMENT = 1";
-	//$usuarios->excluirUsuario();
-	$lista = $usuarios->listarUsuario();
+	session_start();
+	$coments = new Comentario();
+	$id_ex = addslashes($_GET['id_comentario']);
+	$id_us = addslashes($_SESSION['id']);
+	// echo $id_ex;
+	// echo "<hr>";
+	// echo $id_us;
+
+
+	$coments->excluirComentario($id_ex,$id_us);
+	
 } catch (Exception $e) {
 	Erro::tratarErro($e);
 }
@@ -24,7 +23,7 @@ try {
 	<title>Testes</title>
 </head>
 <body>
-	<table>
+	<!-- <table>
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -43,6 +42,6 @@ try {
 				</tr>
 			<?php endforeach ?>
 		</tbody>
-	</table>
+	</table> -->
 </body>
 </html>

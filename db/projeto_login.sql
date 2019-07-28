@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Jul-2019 às 22:19
+-- Generation Time: 29-Jul-2019 às 01:21
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 7.2.11
 
@@ -41,11 +41,13 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id`, `comentario`, `dia`, `horario`, `fk_id_usuario`) VALUES
-(1, 'Cara ficou bacana esse site. De verdade!', '2019-07-22', '07:25', 3),
-(2, 'Interessante o que você fez, gostaria de entrar em contato com você para saber mais sobre seu potencial.', '2019-07-24', '12:13', 3),
-(3, 'Sequinte, você so sabe fazer CRUD? poxa tem que aprender muita coisa ainda, sabe de praticamente nada!!', '2019-07-26', '16:25', 1),
-(4, 'Tu é muito ruin mano, mds!! sabe nem fazer um sistema!! LIXO', '2019-07-27', '16:27', 2),
-(5, 'Seu site tanto quanto o sistema ficaram uma porcaria.', '2019-07-27', '16:27', 2);
+(6, 'Cara ficou bacana esse site. De verdade!', '2019-07-22', '07:25', 3),
+(7, 'Interessante o que você fez, gostaria de entrar em contato com você para saber mais sobre seu potencial.', '2019-07-24', '12:13', 3),
+(8, 'Sequinte, você so sabe fazer CRUD? poxa tem que aprender muita coisa ainda, sabe de praticamente nada!!', '2019-07-26', '16:25', 1),
+(9, 'Tu é muito ruin mano, mds!! sabe nem fazer um sistema!! LIXO', '2019-07-27', '16:27', 2),
+(10, 'Seu site tanto quanto o sistema ficaram uma porcaria.', '2019-07-27', '16:27', 2),
+(11, 'Ei Ei...', '2019-07-28', '17:19', 1),
+(12, 'ComentÃ¡rio do Admin!', '2019-07-28', '17:27', 1);
 
 -- --------------------------------------------------------
 
@@ -95,7 +97,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
