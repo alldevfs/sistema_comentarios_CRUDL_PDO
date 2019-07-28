@@ -10,12 +10,18 @@
 		<p class="texto">O que significa CRUD?</p>
 		<p class="texto">Como funciona um site em sub-blocos?</p>
 		<p class="texto">Que ideia a mais você pode implementar?</p>
-		<h3>Conte-nos o que achou..</h3>
-		<form method="POST" action="#">
-			<img src="img/img-perfil.jpg">
-			<textarea name="texto" placeholder="Deixe seu comentário que ele é sim importânte!" maxlength="400"></textarea>
-			<input type="submit" value="Publicar seu comentário" id="enviar-comentario">
-		</form>
+		<?php if (isset($_SESSION['id'])) { ?>
+			<h3>Conte-nos o que achou..</h3>
+			<form method="POST" action="insereComentario.php">
+				<img src="img/img-perfil.jpg">
+				<textarea name="texto" placeholder="Deixe seu comentário que ele é sim importânte!" maxlength="400"></textarea>
+				<input type="submit" value="Publicar seu comentário" id="enviar-comentario">
+			</form>
+		<?php } else { ?>
+			<h2>Comentários. </h2>
+			<!-- 	<a href="cadastrar.php">Deseja se cadastrar?</a> -->
+		<?php } ?>
+		
 		<?php if (count($dadoComentarios) > 0) 
 		{			
 			foreach ($dadoComentarios as $dc) 
@@ -24,7 +30,16 @@
 					<div class="outros-comentarios">
 						<img src="img/img-perfil.jpg">
 						<h3><?= $dc['nome_usuario']; ?></h3>
-						<h4><?= $dc['horario']; ?> - <?= $data->Format('d/m/Y'); ?> <a href="#">excluir</a></h4>
+						<h4><?= $dc['horario']; ?> - <?= $data->Format('d/m/Y'); ?> 
+						<?php 
+						if (isset($_SESSION['id'])) {
+							if($_SESSION['id'] == $dc['fk_id_usuario']) { ?>
+								<a href="excluiComentario.php?id_comentario=<?= $dc['id'] ?>">excluir</a></h4>
+							<?php	} elseif (isset($_SESSION['master'])) { ?>
+								<a href="excluiComentario.php?id_comentario=<?= $dc['id'] ?>">excluir</a></h4>
+							<?php 	}
+						} 
+						?>
 						<p><?= $dc['comentario']; ?></p>
 					</div>
 				<?php } 
