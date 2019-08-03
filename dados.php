@@ -7,14 +7,14 @@
 		<th>Id</th>
 		<th>Nome</th>
 		<th>E-mail</th>
-		<th>Nivel de acesso</th>
+		<th>Quant. comentários</th>
 	</tr>
 	<?php foreach ($lista as $linha) : ?>
 		<tr class="tabela_corpo">
 			<td><?= $linha['id'] ?></td>
 			<td><?= $linha['nome'] ?></td>
 			<td><?= $linha['email'] ?></td>
-			<td><center><?= (isset($linha['nivel']))? $linha['nivel'] : "0"; ?></center></td>
+			<td><center><?= $linha['quant_comentarios'] ?></center></td>
 		</tr>
 	<?php endforeach ?>
 

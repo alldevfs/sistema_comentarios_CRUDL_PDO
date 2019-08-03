@@ -14,7 +14,7 @@ if (isset($_POST['email'])) { //Ver uma forma melhor de verificar o input de cad
 
 		if ($usuario->logarUsuario($email, $senha)) {					//SUCESS 2/2
 			echo "<script> alert('Logado com sucesso!'); </script>";
-			header("Location: index.php.");
+			header("Location: index.php");
 		} else {														//ERRO 2/2
 			echo "<script> alert('Email ou senha incorretos!'); </script>";
 		}
