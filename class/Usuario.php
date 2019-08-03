@@ -83,12 +83,12 @@ class Usuario {
 		return $dadosUsuario;
 	}
 
-	public function listarUsuario()	{
-		$sqlLista = "SELECT * FROM usuarios";
+	public function listarDados()	{
+		$sqlLista = "SELECT usuarios.id, usuarios.nome, usuarios.email, COUNT(comentarios.comentario) AS quant_comentarios FROM usuarios LEFT JOIN comentarios ON usuarios.id = comentarios.fk_id_usuario GROUP BY usuarios.id";
 		$stmt = $this->PDO->prepare($sqlLista);
 		$stmt->execute();
 
-		$lista = $stmt->fetchAll();
-		return $lista;
+		$dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		return $dados;
 	}
 }
